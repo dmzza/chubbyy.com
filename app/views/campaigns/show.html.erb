@@ -1,8 +1,6 @@
 <% content_for :title, @campaign.title %>
 
-<style>
-  <%= @campaign.stylesheet.html_safe %>
-</style>
+<% content_for :style, @campaign.stylesheet.html_safe %>
 
 <%= @campaign.top.html_safe %>
 
