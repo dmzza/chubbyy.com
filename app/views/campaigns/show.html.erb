@@ -1,34 +1,13 @@
+<% content_for :title, @campaign.title %>
+
+<style>
+  <%= @campaign.stylesheet.html_safe %>
+</style>
+
+<%= @campaign.top.html_safe %>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @campaign.title %>
-</p>
+<%= @campaign.body.html_safe %>
 
-<p>
-  <strong>Top:</strong>
-  <%= @campaign.top %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @campaign.body %>
-</p>
-
-<p>
-  <strong>Bottom:</strong>
-  <%= @campaign.bottom %>
-</p>
-
-<p>
-  <strong>Stylesheet:</strong>
-  <%= @campaign.stylesheet %>
-</p>
-
-<p>
-  <strong>Page:</strong>
-  <%= @campaign.page_id %>
-</p>
-
-<%= link_to 'Edit', edit_campaign_path(@campaign) %> |
-<%= link_to 'Back', campaigns_path %>
+<%= @campaign.bottom.html_safe %>
