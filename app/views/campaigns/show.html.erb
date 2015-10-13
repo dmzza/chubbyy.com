@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @campaign.title %>
+</p>
+
+<p>
+  <strong>Top:</strong>
+  <%= @campaign.top %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @campaign.body %>
+</p>
+
+<p>
+  <strong>Bottom:</strong>
+  <%= @campaign.bottom %>
+</p>
+
+<p>
+  <strong>Stylesheet:</strong>
+  <%= @campaign.stylesheet %>
+</p>
+
+<p>
+  <strong>Page:</strong>
+  <%= @campaign.page_id %>
+</p>
+
+<%= link_to 'Edit', edit_campaign_path(@campaign) %> |
+<%= link_to 'Back', campaigns_path %>
