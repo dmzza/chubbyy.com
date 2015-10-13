@@ -1,29 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Campaigns</h1>
+<h1>Campaigns</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Page</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <div class="campaigns" style="clear:both;">
     <% @campaigns.each do |campaign| %>
-      <tr>
-        <td><%= campaign.title %></td>
-        <td><%= campaign.page_id %></td>
-        <td><%= link_to 'Show', campaign %></td>
-        <td><%= link_to 'Edit', edit_campaign_path(campaign) %></td>
-        <td><%= link_to 'Destroy', campaign, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div>
+        <h3><center><%= campaign.title %></center></h3><br />
+        <center><%= campaign.page_id %></center>
+        <div style="bottom:10px; position:absolute;">
+          <%= link_to 'Show', campaign %>
+          <%= link_to 'Edit', edit_campaign_path(campaign) %>
+          <%= link_to 'Destroy', campaign, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+    <div>
+      <h1><%= link_to '+', new_campaign_path %></h1>
+    </div>
+  </div>
+
 
 <br>
-
-<%= link_to 'New Campaign', new_campaign_path %>
