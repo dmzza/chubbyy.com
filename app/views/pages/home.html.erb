@@ -1,9 +1,12 @@
-  <div class="bubble">
-    <div class="top"></div>
-    <div class="middle">
-      i love you
-    </div>
-    <div class="bottom"></div>
+<div class="bubble">
+  <div class="top"></div>
+  <div class="middle">
+    i love you
   </div>
-  <img src="//a5.mzstatic.com/us/r30/Purple3/v4/e9/10/3c/e9103c79-c94e-6171-d003-c5c065d35332/screen322x572.jpeg" /><br/>
-  <a href="http://appstore.com/chubbyy"><img src="/images/app-store-badge.svg" height="40px" width="135px" /></a>
+  <div class="bottom"></div>
+</div>
+<%= image_tag "//a5.mzstatic.com/us/r30/Purple3/v4/e9/10/3c/e9103c79-c94e-6171-d003-c5c065d35332/screen322x572.jpeg" %><br>
+<%= link_to "http://appstore.com/chubbyy" do %>
+  <%= image_tag "app-store-badge.svg" %>
+<% end %>
+
