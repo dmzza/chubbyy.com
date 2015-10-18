@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :campaigns
+
+  devise_scope :users do
+    get 'register', to: 'devise/registrations#new', as: :register
+    get 'login', to: 'devise/sessions#new', as: :login
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
