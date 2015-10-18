@@ -34,6 +34,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # User System
 gem 'devise'
+# User Auth System
+gem 'cancancan', '~> 1.10'
 
 gem 'rails_12factor', group: :production
 
