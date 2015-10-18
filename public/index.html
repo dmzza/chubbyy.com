@@ -4,14 +4,43 @@
   <style>
     body {
       text-align:center;
+      font-family: "SF UI Display", "Helvetica Neue", "Helvetica", arial, sans-serif;
     }
     a {
       position:relative;
-      top:-180px;
+      top:-190px;
+    }
+
+    .bubble {
+      position: relative;
+      top:185px;
+      margin: 0 auto;
+      width: 214px;
+      font-weight: 800;
+      font-size:26px;
+    }
+    .bubble .top {
+      background-image: url("/assets/bubble-top.png");
+      height: 16px;
+    }
+    .bubble .middle {
+      background-image: url("/assets/bubble-middle.png");
+      padding: 10px 0;
+    }
+    .bubble .bottom {
+      background-image: url("/assets/bubble-bottom.png");
+      height: 23px;
     }
   </style>
 </head>
 <body>
+  <div class="bubble">
+    <div class="top"></div>
+    <div class="middle">
+      i love you
+    </div>
+    <div class="bottom"></div>
+  </div>
   <img src="http://a5.mzstatic.com/us/r30/Purple3/v4/e9/10/3c/e9103c79-c94e-6171-d003-c5c065d35332/screen322x572.jpeg" /><br/>
   <a href="http://appstore.com/chubbyy"><img src="/assets/app-store-badge.svg" height="40px" width="135px" /></a>
 </body>
