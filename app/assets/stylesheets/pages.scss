@@ -1,0 +1,30 @@
+body {
+  text-align:center;
+  font-family: "SF UI Display", "Helvetica Neue", "Helvetica", arial, sans-serif;
+}
+
+a {
+  position:relative;
+  top:-190px;
+}
+
+.bubble {
+  position: relative;
+  top:185px;
+  margin: 0 auto;
+  width: 214px;
+  font-weight: 800;
+  font-size:26px;
+}
+.bubble .top {
+  background-image: url("/images/bubble-top.png");
+  height: 16px;
+}
+.bubble .middle {
+  background-image: url("/images/bubble-middle.png");
+  padding: 10px 0;
+}
+.bubble .bottom {
+  background-image: url("/images/bubble-bottom.png");
+  height: 23px;
+}
