@@ -1,5 +1,6 @@
 class CampaignsController < ApplicationController
   before_action :set_campaign, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /campaigns
   # GET /campaigns.json
