@@ -2,10 +2,12 @@
 
 <% content_for :style, @campaign.stylesheet.html_safe %>
 
-<%= @campaign.top.html_safe %>
+<div class="campaign">
+  <%= @campaign.top.html_safe %>
 
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<%= @campaign.body.html_safe %>
+  <%= @campaign.body.html_safe %>
 
-<%= @campaign.bottom.html_safe %>
+  <%= @campaign.bottom.html_safe %>
+</div>
