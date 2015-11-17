@@ -5,8 +5,7 @@
 .campaigns>div {
   float:left; position:relative; width: 300px; height:180px; margin:25px; padding:10px; background: #fdfdfd;
   &:hover {
-    // background: #5856D6;
-    background: green;
+    background: #5856D6;
     color:white;
     a {
       color:white;
