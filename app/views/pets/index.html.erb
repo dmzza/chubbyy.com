@@ -15,9 +15,9 @@
   <tbody>
     <% @pets.each do |pet| %>
       <tr>
-        <td><%= pet.color %></td>
+        <td bgcolor="#<%= pet.color.hex_value %>"><%= pet.color %></td>
         <td><%= pet.shape %></td>
-        <td><%= pet.last_name %></td>
+        <td><%= pet.full_name %></td>
         <td><%= link_to 'Show', pet %></td>
         <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
         <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
