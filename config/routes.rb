@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :shapes
   resources :colors
   devise_for :users
   resources :campaigns
