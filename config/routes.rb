@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :pets
+  resources :shapes
+  resources :colors
   devise_for :users
   resources :campaigns
 
