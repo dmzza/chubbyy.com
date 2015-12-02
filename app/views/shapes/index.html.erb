@@ -15,7 +15,7 @@
     <% @shapes.each do |shape| %>
       <tr>
         <td><%= shape.name %></td>
-        <td><%= shape.image %></td>
+        <td><img src="<%= shape.image %>"></td>
         <td><%= link_to 'Show', shape %></td>
         <td><%= link_to 'Edit', edit_shape_path(shape) %></td>
         <td><%= link_to 'Destroy', shape, method: :delete, data: { confirm: 'Are you sure?' } %></td>
