@@ -11,14 +11,8 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :color_id %><br>
-    <%= f.text_field :color_id %>
-  </div>
-  <div class="field">
-    <%= f.label :shape_id %><br>
-    <%= f.text_field :shape_id %>
-  </div>
+  <%= f.collection_select(:color_id, Color.all, :id, :hex_value ) %>
+  <%= f.collection_select(:shape_id, Shape.all, :id, :name ) %>
   <div class="field">
     <%= f.label :last_name %><br>
     <%= f.text_field :last_name %>

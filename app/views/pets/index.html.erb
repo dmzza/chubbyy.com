@@ -15,7 +15,7 @@
   <tbody>
     <% @pets.each do |pet| %>
       <tr>
-        <td bgcolor="#<%= pet.color.hex_value %>"></td>
+        <!-- <td bgcolor="#<%= pet.color.hex_value %>"></td> -->
         <td bgcolor="#<%= pet.color.hex_value %>"><%= image_tag(pet.shape.image)%></td>
         <td><%= pet.full_name %></td>
         <td><%= link_to 'Show', pet %></td>
