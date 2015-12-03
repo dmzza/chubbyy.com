@@ -1,6 +1,12 @@
+<style>
+  body {
+    background: #<%= @color.hex_value %>;
+  }
+</style>
+
 <p id="notice"><%= notice %></p>
 
-<p style="background: #<%= @color.hex_value %>">
+<p>
   <strong>Hex value:</strong>
   <%= @color.hex_value %>
 </p>
