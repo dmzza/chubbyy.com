@@ -11,17 +11,22 @@
     </div>
   <% end %>
 
-<% @colors.each do |color| %>
-  <input type="radio" value="<%= color.id %>" name="color[color_id]" id="color_color_id_<%= color.id %>"/>
-  <label style="background-color:#<%= color.hex_value %>" for="color_color_id_<%= color.id %>"><%= color.hex_value %></label>
+      <% @colors.each do |color| %>
+        <input type="radio" value="<%= color.id %>" name="color[color_id]" id="color_color_id_<%= color.id %>"/>
+        <label style="background-color:#<%= color.hex_value %>" for="color_color_id_<%= color.id %>"><%= color.hex_value %></label>
+      <% end %>
+      <br>
+      <% @shapes.each do |shape| %>
+        <input type="radio" value="<%= shape.id %>" name="shape[shape_id]" id="shape_shape_id_<%= shape.id %>" />
+        <label for="shape_shape_id_<%= shape.id %>"><%= image_tag(shape.image)%></label>
+      <% end %>
+      <br>
+  <!-- <%= collection_radio_buttons(:shape, :shape_id, @shapes, :id, :name ) %> -->
+    <div class="field">
+      <%= f.label :last_name %><br>
+      <%= f.text_field :last_name %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
   <% end %>
-<br>
-  <%= collection_radio_buttons(:shape, :shape_id, @shapes, :id, :name ) %>
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
