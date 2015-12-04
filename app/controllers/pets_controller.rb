@@ -21,6 +21,8 @@ class PetsController < ApplicationController
 
   # GET /pets/1/edit
   def edit
+    @colors = Color.all
+    @shapes = Shape.all
   end
 
   # POST /pets
