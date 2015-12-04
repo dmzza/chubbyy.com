@@ -11,7 +11,11 @@
     </div>
   <% end %>
 
-  <%= collection_radio_buttons(:color, :color_id, @colors, :id, :hex_value ) %><br>
+<% @colors.each do |color| %>
+  <input type="radio" value="<%= color.id %>" name="color[color_id]" id="color_color_id_<%= color.id %>"/>
+  <label style="background-color:#<%= color.hex_value %>" for="color_color_id_<%= color.id %>"><%= color.hex_value %></label>
+  <% end %>
+<br>
   <%= collection_radio_buttons(:shape, :shape_id, @shapes, :id, :name ) %>
   <div class="field">
     <%= f.label :last_name %><br>
