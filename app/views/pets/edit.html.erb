@@ -1,9 +1,11 @@
-<h1>Editing Pet</h1>
+<h1>Create your own Chubbyy 🙃</h1>
 
 <style>
+    img.shape {
+        background-color:#<%= @pet.color.hex_value %>;
+    }
     div.pet-render {
         float:left;
-        background-color:#<%= @pet.color.hex_value %>;
         width: 50%;
     }
     div.pet-form {
@@ -15,7 +17,7 @@
   <div class="pet-render">
     <%= @pet.full_name %>
     <%= @pet.lucky_number %>
-    <%= image_tag(@pet.shape.image) %>
+    <%= image_tag(@pet.shape.image, class:"shape") %>
   </div>
 
   <div class="pet-form">
@@ -38,8 +40,7 @@
         <input type="hidden" value="<%= shape.id %>" name="pet[shape_id]"
           id="pet_shape_id_<%= shape.id %>" />
         <button type="submit" name="commit">
-          <div style="background-color:#<%= @pet.color.hex_value %>"
-          for="pet_shape_id_<%= shape.id %>"><%= image_tag(shape.image)%></div></button>
+          <%= image_tag(shape.image, class:"shape")%></button>
 
       <% end %>
     <% end %>
