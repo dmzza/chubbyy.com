@@ -18,7 +18,7 @@
       <br>
       <% @shapes.each do |shape| %>
         <input type="radio" value="<%= shape.id %>" name="pet[shape_id]" id="pet_shape_id_<%= shape.id %>" />
-        <label for="pet_shape_id_<%= shape.id %>"><%= image_tag(shape.image)%></label>
+        <label style="background-color:#<%= @pet.color.hex_value %>" for="pet_shape_id_<%= shape.id %>"><%= image_tag(shape.image)%></label>
       <% end %>
       <br>
 
