@@ -15,6 +15,7 @@ class PetsController < ApplicationController
   # GET /pets/new
   def new
     @pet = Pet.new
+    @pet.color = Color.find(5)
     @colors = Color.all
     @shapes = Shape.all
   end
