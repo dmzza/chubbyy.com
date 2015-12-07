@@ -12,6 +12,11 @@
         float:left;
         width: 50%;
     }
+    button {
+        border: 0;
+        padding: 0;
+        background-color: white;
+    }
 </style>
 
   <div class="pet-render">
@@ -37,8 +42,9 @@
     <% @shapes.each do |shape| %>
 
       <%= form_for(@pet) do |f| %>
-        <input type="hidden" value="<%= shape.id %>" name="pet[shape_id]"
-          id="pet_shape_id_<%= shape.id %>" />
+        <input type="hidden" value="<%= shape.id %>"
+          name="pet[shape_id]"
+          id="pet_shape_id_<%= shape.id %>"/>
         <button type="submit" name="commit">
           <%= image_tag(shape.image, class:"shape")%></button>
 
