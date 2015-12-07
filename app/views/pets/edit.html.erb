@@ -1,6 +1,20 @@
 <h1>Editing Pet</h1>
 
-<%= render 'form' %>
+  <% @colors.each do |color| %>
+
+    <%= form_for(@pet) do |f| %>
+      <input type="hidden" value="<%= color.id %>" name="pet[color_id]" id="pet_color_id_<%= color.id %>"/>
+      <button type="submit" name="commit"><div style="background-color:#<%= color.hex_value %>" for="pet_color_id_<%= color.id %>"><%= color.hex_value %></div></button>
+    <% end %>
+  <% end %>
+
+  <% @shapes.each do |shape| %>
+
+    <%= form_for(@pet) do |f| %>
+      <input type="hidden" value="<%= shape.id %>" name="pet[shape_id]" id="pet_shape_id_<%= shape.id %>" />
+      <button type="submit" name="commit"><div style="background-color:#<%= @pet.color.hex_value %>" for="pet_shape_id_<%= shape.id %>"><%= image_tag(shape.image)%></div></button>
+    <% end %>
+  <% end %>
 
 <%= link_to 'Show', @pet %> |
 <%= link_to 'Back', pets_path %>
