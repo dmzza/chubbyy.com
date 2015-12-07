@@ -1,20 +1,47 @@
 <h1>Editing Pet</h1>
 
-  <% @colors.each do |color| %>
+<style>
+    div.pet-render {
+        float:left;
+        background-color:#<%= @pet.color.hex_value %>;
+    }
+    div.pet-form {
+        float:left;
+    }
+</style>
 
-    <%= form_for(@pet) do |f| %>
-      <input type="hidden" value="<%= color.id %>" name="pet[color_id]" id="pet_color_id_<%= color.id %>"/>
-      <button type="submit" name="commit"><div style="background-color:#<%= color.hex_value %>" for="pet_color_id_<%= color.id %>"><%= color.hex_value %></div></button>
+  <div class="pet-render">
+    <%= @pet.full_name %>
+    <%= @pet.lucky_number %>
+    <%= image_tag(@pet.shape.image) %>
+  </div>
+
+  <div class="pet-form">
+    <% @colors.each do |color| %>
+
+      <%= form_for(@pet) do |f| %>
+        <input type="hidden" value="<%= color.id %>"
+          name="pet[color_id]"
+          id="pet_color_id_<%= color.id %>"/>
+        <button type="submit" name="commit">
+          <div style="background-color:#<%= color.hex_value %>"
+          for="pet_color_id_<%= color.id %>"><%= color.hex_value %></div></button>
+
+      <% end %>
     <% end %>
-  <% end %>
 
-  <% @shapes.each do |shape| %>
+    <% @shapes.each do |shape| %>
 
-    <%= form_for(@pet) do |f| %>
-      <input type="hidden" value="<%= shape.id %>" name="pet[shape_id]" id="pet_shape_id_<%= shape.id %>" />
-      <button type="submit" name="commit"><div style="background-color:#<%= @pet.color.hex_value %>" for="pet_shape_id_<%= shape.id %>"><%= image_tag(shape.image)%></div></button>
+      <%= form_for(@pet) do |f| %>
+        <input type="hidden" value="<%= shape.id %>" name="pet[shape_id]"
+          id="pet_shape_id_<%= shape.id %>" />
+        <button type="submit" name="commit">
+          <div style="background-color:#<%= @pet.color.hex_value %>"
+          for="pet_shape_id_<%= shape.id %>"><%= image_tag(shape.image)%></div></button>
+
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 
-<%= link_to 'Show', @pet %> |
+<%= link_to 'Show', @pet %>
 <%= link_to 'Back', pets_path %>
