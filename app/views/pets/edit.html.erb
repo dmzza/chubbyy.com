@@ -26,6 +26,19 @@
   </div>
 
   <div class="pet-form">
+
+    <% @shapes.each do |shape| %>
+
+      <%= form_for(@pet) do |f| %>
+        <input type="hidden" value="<%= shape.id %>"
+          name="pet[shape_id]"
+          id="pet_shape_id_<%= shape.id %>"/>
+        <button type="submit" name="commit">
+          <%= image_tag(shape.image, class:"shape")%></button>
+
+      <% end %>
+    <% end %>
+
     <% @colors.each do |color| %>
 
       <%= form_for(@pet) do |f| %>
@@ -39,17 +52,6 @@
       <% end %>
     <% end %>
 
-    <% @shapes.each do |shape| %>
-
-      <%= form_for(@pet) do |f| %>
-        <input type="hidden" value="<%= shape.id %>"
-          name="pet[shape_id]"
-          id="pet_shape_id_<%= shape.id %>"/>
-        <button type="submit" name="commit">
-          <%= image_tag(shape.image, class:"shape")%></button>
-
-      <% end %>
-    <% end %>
   </div>
 
 <%= link_to 'Show', @pet %>
