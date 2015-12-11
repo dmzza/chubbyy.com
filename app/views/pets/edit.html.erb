@@ -14,6 +14,7 @@
     div.pet-render {
         float: left;
         width: 50%;
+        margin-top: 150px;
     }
     div.pet-form {
         float: left;
@@ -24,17 +25,24 @@
         padding: 0;
         background-color: white;
     }
-    .color_button div {
+    .color-button div {
         display: block;
-        width: 150px;
-        height: 150px;
-        border-radius: 75px;
+        width: 70px;
+        height: 70px;
+        border-radius: 35px;
+    }
+    .color-button {
+        float: left;
+    }
+    .shape-button img {
+        width: 140px;
+    }
+    .shape-button {
+        float: left;
     }
 </style>
 
   <div class="pet-render">
-    <%= @pet.full_name %>
-    <%= @pet.lucky_number %>
     <%= image_tag(@pet.shape.image, class:"shape") %>
   </div>
 
@@ -46,7 +54,7 @@
         <input type="hidden" value="<%= shape.id %>"
           name="pet[shape_id]"
           id="pet_shape_id_<%= shape.id %>"/>
-        <button type="submit" name="commit">
+        <button class="shape-button" type="submit" name="commit">
           <%= image_tag(shape.image, class:"shape")%></button>
 
       <% end %>
@@ -58,7 +66,7 @@
         <input type="hidden" value="<%= color.id %>"
           name="pet[color_id]"
           id="pet_color_id_<%= color.id %>"/>
-        <button class ="color_button", type="submit" name="commit">
+        <button class ="color-button", type="submit" name="commit">
           <div style="background-color:#<%= color.hex_value %>"
           for="pet_color_id_<%= color.id %>"></div></button>
 
