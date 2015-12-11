@@ -24,6 +24,10 @@ class PetsController < ApplicationController
   def edit
     @colors = Color.all
     @shapes = Shape.all
+    @colors.each do |color|
+      if @pet.color.id == color.id
+      end
+    end
   end
 
   # POST /pets

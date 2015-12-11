@@ -30,15 +30,26 @@
         width: 40px;
         height: 40px;
         border-radius: 20px;
+        border-style: solid;
+        border-width: 0px;
     }
     .color-button {
         float: left;
+
     }
     .shape-button img {
         width: 110px;
     }
     .shape-button {
         float: left;
+    }
+    .selected {
+      padding:11px;
+    }
+    .selected div {
+        border-width: 4px;
+        border-color: black;
+        border-radius: 24px;
     }
 </style>
 
@@ -59,7 +70,7 @@
 
       <% end %>
     <% end %>
-    
+
 <div style="clear:left;"></div>
 
     <% @colors.each do |color| %>
@@ -68,8 +79,8 @@
         <input type="hidden" value="<%= color.id %>"
           name="pet[color_id]"
           id="pet_color_id_<%= color.id %>"/>
-        <button class ="color-button", type="submit" name="commit">
-          <div style="background-color:#<%= color.hex_value %>"
+        <button class="color-button<% if @pet.color.id == color.id %> selected<% end %>" type="submit" name="commit">
+          <div style="background-color:#<%= color.hex_value %>;border-color:#<%= color.hex_value %>;"
           for="pet_color_id_<%= color.id %>"></div></button>
 
       <% end %>
