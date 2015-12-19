@@ -11,7 +11,7 @@ class Pet < ActiveRecord::Base
   end
 
   def expression_id
-    3 # lacking a model for now, default to the higest possible ID
+    3 # lacking a model for now, default to the highest possible ID
   end
 
   def lucky_number
