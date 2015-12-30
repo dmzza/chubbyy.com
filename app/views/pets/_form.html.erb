@@ -11,19 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :color_id %><br>
-    <%= f.text_field :color_id %>
-  </div>
-  <div class="field">
-    <%= f.label :shape_id %><br>
-    <%= f.text_field :shape_id %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+      <% @colors.each do |color| %>
+        <input type="radio" value="<%= color.id %>" name="pet[color_id]" id="pet_color_id_<%= color.id %>"/>
+        <label style="background-color:#<%= color.hex_value %>" for="pet_color_id_<%= color.id %>"><%= color.hex_value %></label>
+      <% end %>
+      <br>
+      <% @shapes.each do |shape| %>
+        <input type="radio" value="<%= shape.id %>" name="pet[shape_id]" id="pet_shape_id_<%= shape.id %>" />
+        <label style="background-color:#<%= @pet.color.hex_value %>" for="pet_shape_id_<%= shape.id %>"><%= image_tag(shape.image)%></label>
+      <% end %>
+      <br>
+
+    <div class="field">
+      <%= f.label :last_name %><br>
+      <%= f.text_field :last_name %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>

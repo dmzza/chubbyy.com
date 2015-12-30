@@ -2,12 +2,12 @@
 
 <p>
   <strong>Color:</strong>
-  <%= @pet.color %>
+  <%= @pet.color.hex_value %>
 </p>
 
 <p>
   <strong>Shape:</strong>
-  <%= @pet.shape %>
+  <%= image_tag(@pet.shape.image)%>
 </p>
 
 <p>
